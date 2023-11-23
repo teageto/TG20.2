@@ -4,9 +4,8 @@ const getUsers = (req, res) => {
   res.json(userModel.getUsers());
 };
 
-const ID = parseInt(req.params.id)
-
 const getUserById = (req, res) => {
+  const ID = parseInt(req.params.id)
   const user = userModel.getUserById(ID);
   if (user) {
     res.status(200).json(user);
@@ -25,6 +24,7 @@ const createUser = (req, res) => {
 };
 
 const updateUser = (req, res) => {
+  const ID = parseInt(req.params.id)
   const updatedUser = userModel.updateUser(ID, req.body);
   if (updatedUser) {
     res.status(200).json(updatedUser);
@@ -34,6 +34,7 @@ const updateUser = (req, res) => {
 };
 
 const deleteUser = (req, res) => {
+  const ID = parseInt(req.params.id)
   const deletedUser = userModel.deleteUser(ID);
   if (deletedUser) {
     res.status(200).json(deletedUser);

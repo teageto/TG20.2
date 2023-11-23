@@ -30,6 +30,11 @@ async function requestCRUD(method, data) {
             });
             result = postResponse.ok ? postResponse.json() : false;
             break;
+        default :
+            let getResponsex = await fetch(data ? API_URL + data.id : API_URL);
+            result = getResponsex.ok ? getResponsex.json() : false;
+            break;
+            
     }
 
     return result;

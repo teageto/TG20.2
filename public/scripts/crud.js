@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     getAll()
 
-    document.body.addEventListener("input", validate());
+    document.body.addEventListener("change", validate());
 
     document.getElementById("btnGet1").addEventListener("click", () => {
         let inputId = document.getElementById("inputGet1Id");
